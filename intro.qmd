@@ -1,5 +1,6 @@
 # Método SOAP para registro de consultas de pacientes {.unnumbered}
 
+<<<<<<< HEAD
 
 
 
@@ -29,6 +30,8 @@ O salto qualitativo veio com o **Registro Médico Orientado por Problemas (RMOP)
 
 
 
+=======
+>>>>>>> fa87bf50eb5404ed8d442546db6777889d111f4f
 SOAP é um formato estruturado de registro clínico com quatro partes: **S**ubjetivo, **O**bjetivo, **A**valiação (ou Análise) e **P**lano. Ele nasceu como parte do **Prontuário Orientado por Problemas (POMR)**, proposto por **Lawrence L. Weed** no fim da década de 1960, em dois artigos clássicos no *New England Journal of Medicine* e em sua obra sobre prontuários e educação médica. A ideia central é organizar o cuidado em torno de **problemas** e acompanhar sua evolução de forma lógica e rastreável. [New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM196803142781105 "Medical Records That Guide and Teach"){target="_blank"} ou em [New England Journal of Medicine](https://sci-hub.se/10.1056/NEJM196803142781105 "Medical Records That Guide and Teach"){target="_blank"}.
 
 
@@ -39,7 +42,11 @@ SOAP é um formato estruturado de registro clínico com quatro partes: **S**ubje
 
 -   **S – Subjetivo:** Sintomas, preocupações, expectativas, ideias sobre a doença, história do problema, contexto social/familiar, preferências). É o “texto” do paciente e de cuidadores. Aqui escrevemos **o que a pessoa relata**. 
 
+<<<<<<< HEAD
 -   **O – Objetivo:** **dados observáveis e mensuráveis** colhidos pelo profissional: sinais vitais, exame físico, resultados de testes, escalas padronizadas. Em outras palavras, aqui anotamos **o que nós estamos vendo**.
+=======
+-   **O – Objetivo:** **dados observáveis/medíveis** colhidos pelo profissional: sinais vitais, exame físico, resultados de testes, escalas padronizadas. Em outras palavras, aqui anotamos **o que nós estamos vendo**.
+>>>>>>> fa87bf50eb5404ed8d442546db6777889d111f4f
 
 -   **A – Avaliação/Análise:** **síntese clínica** que integra S e O: diagnóstico(s) diferencial(is), hipótese principal, gravidade/risco, raciocínio (por que tal hipótese é mais provável), e lista de problemas numerada (biomédicos e psicossociais). A codificação pode usar CID-1 (doenças) e, em APS, preferencialmente ICPC-2 (motivo da consulta, processo/conduta e diagnóstico por episódio de cuidado). Aqui registramos **o que estamos pensando sobre o que está acontecendo com o paciente**.
 
@@ -157,7 +164,11 @@ DN 2009-04-29 -\> 16 anos
 ## Referências essenciais
 
 
+<<<<<<< HEAD
 Neste vídeo há uma aula bem detalhada sobre o tema - [**SBMFCensina 2025 - Registro Clínico e SOAP**](https://www.youtube.com/watch?v=7_ngYffR_mM){target="_blank"}
+=======
+Neste vídeo há uma aula bem detalhada sobre o tema - ([**SBMFCensina 2025 - Registro Clínico e SOAP**](https://www.youtube.com/watch?v=7_ngYffR_mM)){target="_blank"}.
+>>>>>>> fa87bf50eb5404ed8d442546db6777889d111f4f
 
 
 

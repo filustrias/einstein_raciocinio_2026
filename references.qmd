@@ -194,6 +194,11 @@ Escrever **por que** o diagnóstico A é mais provável que B força clareza men
 
 **Exemplo:**
 
+<<<<<<< HEAD
+=======
+> 
+>
+>>>>>>> fa87bf50eb5404ed8d442546db6777889d111f4f
 > "**Avaliação:** Pneumonia comunitária (febre + tosse produtiva + consolidação à ausculta + infiltrado em RX). Diferenciais considerados: TEP (menos provável pela ausculta e ausência de taquipneia desproporcional), IC descompensada (sem edema/estase jugular), tuberculose (sem perda ponderal/sudorese). Pior caso a monitorar: sepse/SDRA."
 
 ### 7. **Acompanhe desfechos: feche o ciclo de feedback**
