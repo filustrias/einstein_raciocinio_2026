@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Método SOAP para registro de consultas de pacientes – Raciocíno clínico</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Método SOAP para registro de consultas de pacientes</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Raciocíno clínico</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apresentação</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Método SOAP para registro de consultas de pacientes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">O que é Medicina Baseada em Evidências e o que é Raciocínio clínico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5As.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Os 5 “A”s da MBE - Fundamentos da MBE</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Raciocínio clínico: os dois sistemas de pensamento, armadilhas da mente e como evitá-las</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#modelos-de-registro-clínico-do-tradicional-ao-orientado-por-problemas" id="toc-modelos-de-registro-clínico-do-tradicional-ao-orientado-por-problemas" class="nav-link active" data-scroll-target="#modelos-de-registro-clínico-do-tradicional-ao-orientado-por-problemas">Modelos de Registro Clínico: do Tradicional ao Orientado por Problemas</a></li>
+  <li><a href="#como-funciona-o-soap" id="toc-como-funciona-o-soap" class="nav-link" data-scroll-target="#como-funciona-o-soap"><strong>Como funciona o SOAP</strong></a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#vamos-olhar-este-caso-abaixo" id="toc-vamos-olhar-este-caso-abaixo" class="nav-link" data-scroll-target="#vamos-olhar-este-caso-abaixo">Vamos olhar este caso abaixo</a></li>
+  <li><a href="#cid-10-x-icpc-2-na-aps-e-onde-entram-no-soap" id="toc-cid-10-x-icpc-2-na-aps-e-onde-entram-no-soap" class="nav-link" data-scroll-target="#cid-10-x-icpc-2-na-aps-e-onde-entram-no-soap">CID-10 x ICPC-2 na APS (e onde entram no SOAP)</a></li>
+  <li><a href="#soap-e-os-atributos-da-aps" id="toc-soap-e-os-atributos-da-aps" class="nav-link" data-scroll-target="#soap-e-os-atributos-da-aps">SOAP e os <strong>atributos da APS</strong></a></li>
+  <li><a href="#exemplos" id="toc-exemplos" class="nav-link" data-scroll-target="#exemplos">Exemplos:</a>
+  <ul class="collapse">
+  <li><a href="#primeira-versão" id="toc-primeira-versão" class="nav-link" data-scroll-target="#primeira-versão">Primeira versão</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#segunda-versão" id="toc-segunda-versão" class="nav-link" data-scroll-target="#segunda-versão">Segunda versão</a></li>
+  <li><a href="#terceira-versão" id="toc-terceira-versão" class="nav-link" data-scroll-target="#terceira-versão">Terceira versão</a></li>
+  </ul></li>
+  <li><a href="#dicas-rápidas-para-escrever-melhor-no-soap" id="toc-dicas-rápidas-para-escrever-melhor-no-soap" class="nav-link" data-scroll-target="#dicas-rápidas-para-escrever-melhor-no-soap">Dicas rápidas para escrever melhor no SOAP</a></li>
+  <li><a href="#referências-essenciais" id="toc-referências-essenciais" class="nav-link" data-scroll-target="#referências-essenciais">Referências essenciais</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Método SOAP para registro de consultas de pacientes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="modelos-de-registro-clínico-do-tradicional-ao-orientado-por-problemas" class="level2">
+<h2 class="anchored" data-anchor-id="modelos-de-registro-clínico-do-tradicional-ao-orientado-por-problemas">Modelos de Registro Clínico: do Tradicional ao Orientado por Problemas</h2>
+<p>O registro clínico que aprendemos na propedêutica médica segue uma estrutura consagrada pelo tempo:</p>
+<ul>
+<li>Queixa principal (QP)</li>
+<li>História da moléstia atual (HMA)</li>
+<li>História mórbida pregressa (HMP)</li>
+<li>História familiar</li>
+<li>História social</li>
+<li>Revisão de sistemas</li>
+<li>Exame físico</li>
+</ul>
+<p>Esse modelo nasceu no hospital, voltado para o diagnóstico de doenças agudas. Sua lógica é a da investigação: o paciente traz uma queixa, o médico investiga sistematicamente até chegar a um diagnóstico e propor um tratamento. É um modelo eficiente para esse fim, e seu valor didático é inegável — ele ensina o estudante a pensar de forma ordenada e a não perder informações relevantes.</p>
+<p>Mas esse modelo tem limitações importantes quando sai do hospital e entra na atenção primária. Ele é fundamentalmente <strong>centrado na doença</strong> e no episódio agudo. Espaço para registrar o que o paciente faz para cuidar de si mesmo, o que ele compreende sobre sua condição, seus objetivos de vida ou seus planos de longo prazo não é algo natural nesta forma de registro. O que chamamos de SIFE (expectativas, preocupações, ideias e funcionalidade) não tem espaço aqui. Problemas que não se encaixam numa categoria diagnóstica — dificuldades financeiras, sobrecarga de cuidador, isolamento social, conflitos familiares — simplesmente não encontram lugar na estrutura QP/HMA/HMP. O registro se torna uma fotografia da doença, não um mapa do paciente.</p>
+<p>O <strong>SOAP</strong> (Subjetivo, Objetivo, Avaliação, Plano) representou um avanço ao organizar o raciocínio clínico em torno do encontro, não apenas da doença. O “subjetivo” capta o que o paciente relata; o “objetivo” registra os dados observáveis; a “avaliação” sintetiza o pensamento clínico; e o “plano” orienta as próximas ações. Ele é mais adequado para o registro de consultas ambulatoriais, pois reconhece que cada encontro é uma unidade de cuidado com sua própria lógica. Ainda assim, o SOAP isolado continua sendo uma nota de consulta — ele descreve bem o <em>que aconteceu hoje</em>, mas não necessariamente <em>quem é esse paciente ao longo do tempo</em>.</p>
+<p>O salto qualitativo veio com o <strong>Registro Médico Orientado por Problemas (RMOP)</strong>, proposto por Lawrence Weed em 1968. Em vez de organizar o prontuário em torno de episódios ou sistemas do corpo, Weed propôs organizá-lo em torno de uma <strong>lista de problemas</strong> ativa e longitudinal — que pode incluir diagnósticos confirmados, sintomas sem diagnóstico definido, riscos, questões sociais e preocupações do próprio paciente. Cada problema é acompanhado ao longo do tempo, tem seu próprio plano e pode ser aberto ou fechado conforme evolui. Nesse modelo, a hipertensão, a perda do emprego e a dificuldade de adesão ao tratamento são todos problemas legítimos que merecem registro e atenção. O cuidado deixa de ser uma sequência de consultas isoladas e passa a ser uma narrativa contínua sobre uma pessoa.</p>
+<p>SOAP é um formato estruturado de registro clínico com quatro partes: <strong>S</strong>ubjetivo, <strong>O</strong>bjetivo, <strong>A</strong>valiação (ou Análise) e <strong>P</strong>lano. Ele nasceu como parte do <strong>Prontuário Orientado por Problemas (POMR)</strong>, proposto por <strong>Lawrence L. Weed</strong> no fim da década de 1960, em dois artigos clássicos no <em>New England Journal of Medicine</em> e em sua obra sobre prontuários e educação médica. A ideia central é organizar o cuidado em torno de <strong>problemas</strong> e acompanhar sua evolução de forma lógica e rastreável. <a href="https://www.nejm.org/doi/full/10.1056/NEJM196803142781105" target="_blank" title="Medical Records That Guide and Teach">New England Journal of Medicine</a> ou em <a href="https://sci-hub.se/10.1056/NEJM196803142781105" target="_blank" title="Medical Records That Guide and Teach">New England Journal of Medicine</a>.</p>
+</section>
+<section id="como-funciona-o-soap" class="level2">
+<h2 class="anchored" data-anchor-id="como-funciona-o-soap"><strong>Como funciona o SOAP</strong></h2>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<ul>
+<li><p><strong>S – Subjetivo:</strong> Sintomas, preocupações, expectativas, ideias sobre a doença, história do problema, contexto social/familiar, preferências). É o “texto” do paciente e de cuidadores. Aqui escrevemos <strong>o que a pessoa relata</strong>.</p></li>
+<li><p><strong>O – Objetivo:</strong> <strong>dados observáveis e mensuráveis</strong> colhidos pelo profissional: sinais vitais, exame físico, resultados de testes, escalas padronizadas. Em outras palavras, aqui anotamos <strong>o que nós estamos vendo</strong>.</p></li>
+<li><p><strong>A – Avaliação/Análise:</strong> <strong>síntese clínica</strong> que integra S e O: diagnóstico(s) diferencial(is), hipótese principal, gravidade/risco, raciocínio (por que tal hipótese é mais provável), e lista de problemas numerada (biomédicos e psicossociais). A codificação pode usar CID-1 (doenças) e, em APS, preferencialmente ICPC-2 (motivo da consulta, processo/conduta e diagnóstico por episódio de cuidado). Aqui registramos <strong>o que estamos pensando sobre o que está acontecendo com o paciente</strong>.</p></li>
+<li><p><strong>P – Plano:</strong> o que será feito para cada problema: exames, tratamentos, educação, acordos de autocuidado, intervenções na comunidade/família, encaminhamentos, <strong>seguimento</strong> (quando/como), e “planos B”. Aqui anotamos <strong>o que nós decidimos fazer juntos</strong></p></li>
+</ul>
+</section>
+<section id="vamos-olhar-este-caso-abaixo" class="level2">
+<h2 class="anchored" data-anchor-id="vamos-olhar-este-caso-abaixo">Vamos olhar este caso abaixo</h2>
+<p>Mulher</p>
+<p>FEMININO</p>
+<p>DN 2009-04-29 -&gt; 16 anos</p>
+<p><strong>Subjetivo</strong> - MÃE REFERE CEFALEIA, FEBRE NÃO AFERIDA, TOSSE SECA E CORIZA NASAL. NÃO BSABE A QUANTOS DIAS APRESENTA SINTOMAS. FEZ USO APENAS DE ANALGESICO. NEGA COMORBIDADES. NEGA ALERGIA MEDICAMENTOSA</p>
+<p><strong>Objetivo</strong> - BEG, CORADO, HIDRATADO, AAAAC: BRNF 2 T SEM SOPROAP MV+ BILAT SEM RAABDOME INOCENTEMMII: PULSOS PRESENTES SEM EDEMA</p>
+<p><strong>Avaliação</strong> - null<br>
+<strong>Plano</strong> - Exames solicitados: TESTE RÁPIDO PARA DETECÇÃO DE SARS-COVID-2 - 0214010163</p>
+</section>
+<section id="cid-10-x-icpc-2-na-aps-e-onde-entram-no-soap" class="level2">
+<h2 class="anchored" data-anchor-id="cid-10-x-icpc-2-na-aps-e-onde-entram-no-soap">CID-10 x ICPC-2 na APS (e onde entram no SOAP)</h2>
+<ul>
+<li><p><strong>CID-10 (CID-10-CM onde aplicável)</strong>: classificação internacional de <strong>doenças</strong>; ótima para estatística, faturamento e vigilância, mas nem sempre captura <strong>motivo de consulta</strong> ou <strong>processos de cuidado</strong>. Ex.: <strong>I10</strong> = hipertensão essencial.</p></li>
+<li><p><strong>ICPC-2 (WONCA):</strong> pensada para <strong>Atenção Primária</strong>, codifica <strong>três dimensões</strong> de cada episódio: <strong>Motivo do Encontro</strong>, <strong>Processo/Intervenção</strong>, <strong>Diagnóstico/Problema</strong>. Ex.: <strong>K86</strong> = “Hipertensão não complicada”; <strong>K85</strong> = “PA elevada”; <strong>K87</strong> = “Hipertensão complicada”. Isso permite registrar a <strong>trajetória</strong> do cuidado ao longo do tempo, não só o rótulo da doença.</p></li>
+</ul>
+</section>
+<section id="soap-e-os-atributos-da-aps" class="level2">
+<h2 class="anchored" data-anchor-id="soap-e-os-atributos-da-aps">SOAP e os <strong>atributos da APS</strong></h2>
+<ul>
+<li><p><strong>Abrangência</strong> (comprehensiveness): o S organiza a <strong>narrativa de vida</strong> e o O traz medidas e achados; a A integra dimensões <strong>biomédicas e psicossociais</strong> em <strong>lista de problemas</strong>; o P inclui ações <strong>clínicas, educativas e comunitárias</strong> — cobrindo o escopo ampliado da APS.</p></li>
+<li><p><strong>Coordenação do cuidado:</strong> o formato orientado por problemas e a clareza do <strong>Plano</strong> (incluindo encaminhamentos, devolutivas e quem faz o quê) facilitam a <strong>articulação</strong> com outros pontos da rede e o retorno de informações.</p></li>
+<li><p><strong>Longitudinalidade:</strong> cada visita acrescenta um <strong>novo SOAP</strong> que se conecta ao anterior, permitindo seguir <strong>episódios</strong> e <strong>problemas</strong> ao longo do tempo (especialmente com ICPC-2), com metas e revisões de plano registradas.</p></li>
+<li><p><strong>Acesso (primeiro contato):</strong> anotações claras e padronizadas reduzem <strong>repetição de histórias</strong> e agilizam triagem/condutas, impactando a experiência de acesso (tempo e resolutividade).</p></li>
+</ul>
+</section>
+<section id="exemplos" class="level2">
+<h2 class="anchored" data-anchor-id="exemplos">Exemplos:</h2>
+<section id="primeira-versão" class="level3">
+<h3 class="anchored" data-anchor-id="primeira-versão">Primeira versão</h3>
+</section>
+<section id="section-1" class="level3">
+<h3 class="anchored" data-anchor-id="section-1"></h3>
+<ul>
+<li><p><strong>S:</strong> “Nega queixas importantes. Refere ‘meio tonto’.</p></li>
+<li><p><strong>O:</strong> BEG, PA ok, MVUA, abd sem alt.</p></li>
+<li><p><strong>A:</strong> Tontura.</p></li>
+<li><p><strong>P:</strong> Solicito exames. Retorno se piorar.”</p></li>
+</ul>
+</section>
+<section id="segunda-versão" class="level3">
+<h3 class="anchored" data-anchor-id="segunda-versão">Segunda versão</h3>
+<ul>
+<li><p><strong>S:</strong> “Sr.&nbsp;João, 58a, veio por <strong>tontura ao levantar</strong> há 2 semanas; piora ao se erguer rápido; sem zumbido, sem perda auditiva, sem síncope. Relata <strong>PA alta</strong> no último mês; usa losartana eventualmente.</p></li>
+<li><p><strong>O:</strong> PA 162/96 (sentado) e 154/94 (em pé 1’), FC 84, glicemia capilar 106 mg/dL; <strong>manobra de Dix-Hallpike negativa</strong>; ausculta c/ BNF.</p></li>
+<li><p><strong>A:</strong> 1) <strong>Hipertensão arterial não controlada</strong> (ICPC-2 <strong>K86</strong>; CID-10 <strong>I10</strong>); 2) <strong>Tontura postural</strong> – provável <strong>hipotensão ortostática leve</strong> induzida por descondicionamento/baixa ingesta.</p></li>
+<li><p><strong>P:</strong> Ajustar anti-hipertensivo; educação sobre levantar devagar e hidratação; <strong>MAPA/ambulatório</strong> em 2 semanas; metas: <strong>PA &lt;130/80</strong> se tolerado; revisar adesão; considerar avaliação de risco CV global.”</p></li>
+</ul>
+</section>
+<section id="terceira-versão" class="level3">
+<h3 class="anchored" data-anchor-id="terceira-versão">Terceira versão</h3>
+<p><strong>Subjetivo:</strong> “Dona Maria, 63 anos. Viúva há 8 meses (seu marido teve um AVC). Está preocupada com o cansaço que vem sentindo recentemente e com os valores da pressão que estão muito altos. Tem medo de ter um derrame como o marido teve. Continua usando apenas hidroclorotiazida 25 mg ao dia, mas com valores de PA acima ede 150/100 mmHg recentemente. Diz que tem medo de ter um derrame como seu esposo e que aceita trocar de remédio, se for precisso -”menos aquele que me deu uma tosse danada”; Ainda fuma cinco cigarros ao dia e está contemplativa para tentar parar novamente- já parou anos atrás, mas acabou voltando. Sabe do prejuizo que o cigarro faz para a HAS, mas ainda acha que “eu fumo muito pouco, doutor”.</p>
+<p><strong>Objetivo:</strong> PA 168/100 (sentado), IMC 31, circ. cintura 103 cm; ausculta cardíaca e pulmonar normais, sem sopros. Último PAP no início do ano, normal. Mamografia idem.</p>
+<p><strong>Avaliação (lista de problemas):</strong></p>
+<ol type="1">
+<li><p><strong>Hipertensão, controle inadequado</strong> (ICPC-2 <strong>K86</strong>; CID-10 <strong>I10</strong>), adesão baixa por <strong>efeitos adversos</strong> prévios e <strong>baixa literacia</strong>;</p></li>
+<li><p><strong>Risco cardiovascular global elevado</strong> (obesidade central, tabagismo, sedentarismo, luto/estresse);</p></li>
+<li><p><strong>Vulnerabilidade social</strong> (insegurança alimentar, cuidadora familiar);</p></li>
+<li><p><strong>Luto recente</strong> com sintomas subclínicos de humor;</p></li>
+<li><p><strong>Dificuldade de engajamento em mudança de hábitos de vida</strong>;</p></li>
+<li><p><strong>Tabagismo - contemplativa para mudança.</strong></p></li>
+</ol>
+<p><strong>Plano (por problema):</strong></p>
+<ol type="1">
+<li><p>Trocar IECA → <strong>losartana 50 mg/d</strong>; aferição domiciliar 5x/semana; <strong>educação</strong> com linguagem simples + impresso ilustrado; próxima revisão em <strong>4 semanas</strong>.</p></li>
+<li><p><strong>Plano de risco CV</strong>: metas PA &lt;130/80 se tolerado; <strong>orientação alimentar</strong> e encaminho para <strong>benefício/alimento</strong> na assistência social; solicitar <strong>perfil lipídico</strong> e <strong>HbA1c</strong>.</p></li>
+<li><p><strong>Coordenação</strong>: contato com <strong>NASF/CRAS</strong> para apoio social; incluir na <strong>agenda compartilhada</strong> de cuidado.</p></li>
+<li><p><strong>Saúde mental</strong>: técnicas breves de manejo do luto; oferta de <strong>grupo na UBS</strong>; escala GDS na próxima consulta.</p></li>
+<li><p><strong>Atividade física</strong>: caminhada 5×/sem 20–30 min (começar com 10 min) + meta semanal registrada.</p></li>
+<li><p><strong>Tabagismo</strong>: aconselhamento breve; avaliar prontidão; oferecer grupos e <strong>NRT</strong> se elegível.<br>
+<strong>Seguimento</strong>: retorno em 4 semanas; telefonema da equipe em 7–10 dias para reforço; revisar adesão e PA.”</p></li>
+</ol>
+<p><em>Destaques:</em> narrativa do paciente, contexto familiar/social, prioridades compartilhadas, <strong>coordenação</strong> com rede social/saúde, e metas <strong>longitudinais</strong>. Códigos ajudam a mensurar e integrar informação clínica e de gestão.</p>
+</section>
+</section>
+<section id="dicas-rápidas-para-escrever-melhor-no-soap" class="level2">
+<h2 class="anchored" data-anchor-id="dicas-rápidas-para-escrever-melhor-no-soap">Dicas rápidas para escrever melhor no SOAP</h2>
+<ul>
+<li></li>
+<li><p><strong>Evite maneirismos</strong> (“BEG”, “sem alt.”) e <strong>escreva o que realmente observou/decidiu</strong>.</p></li>
+<li><p><strong>Liste problemas</strong> numerados (inclua psicossociais e determinantes sociais).</p></li>
+<li><p><strong>Explique seu raciocínio</strong> na A (“porque A é mais provável que B”).</p></li>
+<li><p><strong>No Plano, atribua responsabilidades</strong> (quem faz o quê) e <strong>datas</strong> de seguimento.</p></li>
+<li><p><strong>Use ICPC-2</strong> para motivo/processo/diagnóstico na APS e <strong>CID-10</strong> quando precisar de estatística, interoperabilidade e faturamento.</p></li>
+</ul>
+</section>
+<section id="referências-essenciais" class="level2">
+<h2 class="anchored" data-anchor-id="referências-essenciais">Referências essenciais</h2>
+<p>Neste vídeo há uma aula bem detalhada sobre o tema - <a href="https://www.youtube.com/watch?v=7_ngYffR_mM" target="_blank"><strong>SBMFCensina 2025 - Registro Clínico e SOAP</strong></a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Apresentação">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Apresentação</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link" aria-label="O que é Medicina Baseada em Evidências e o que é Raciocínio clínico">
+        <span class="nav-page-text">O que é Medicina Baseada em Evidências e o que é Raciocínio clínico</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,164 @@
+# Método SOAP para registro de consultas de pacientes {.unnumbered}
+
+
+
+
+## Modelos de Registro Clínico: do Tradicional ao Orientado por Problemas
+
+O registro clínico que aprendemos na propedêutica médica segue uma estrutura consagrada pelo tempo: 
+
+
+- Queixa principal (QP)
+- História da moléstia atual (HMA)
+- História mórbida pregressa (HMP)
+- História familiar
+- História social
+- Revisão de sistemas
+- Exame físico
+
+
+Esse modelo nasceu no hospital, voltado para o diagnóstico de doenças agudas. Sua lógica é a da investigação: o paciente traz uma queixa, o médico investiga sistematicamente até chegar a um diagnóstico e propor um tratamento. É um modelo eficiente para esse fim, e seu valor didático é inegável — ele ensina o estudante a pensar de forma ordenada e a não perder informações relevantes.
+
+
+Mas esse modelo tem limitações importantes quando sai do hospital e entra na atenção primária. Ele é fundamentalmente **centrado na doença** e no episódio agudo. Espaço para registrar o que o paciente faz para cuidar de si mesmo, o que ele compreende sobre sua condição, seus objetivos de vida ou seus planos de longo prazo não é algo natural nesta forma de registro. O que chamamos de SIFE (expectativas, preocupações, ideias e funcionalidade) não tem espaço aqui. Problemas que não se encaixam numa categoria diagnóstica — dificuldades financeiras, sobrecarga de cuidador, isolamento social, conflitos familiares — simplesmente não encontram lugar na estrutura QP/HMA/HMP. O registro se torna uma fotografia da doença, não um mapa do paciente.
+
+O **SOAP** (Subjetivo, Objetivo, Avaliação, Plano) representou um avanço ao organizar o raciocínio clínico em torno do encontro, não apenas da doença. O "subjetivo" capta o que o paciente relata; o "objetivo" registra os dados observáveis; a "avaliação" sintetiza o pensamento clínico; e o "plano" orienta as próximas ações. Ele é mais adequado para o registro de consultas ambulatoriais, pois reconhece que cada encontro é uma unidade de cuidado com sua própria lógica. Ainda assim, o SOAP isolado continua sendo uma nota de consulta — ele descreve bem o *que aconteceu hoje*, mas não necessariamente *quem é esse paciente ao longo do tempo*.
+
+O salto qualitativo veio com o **Registro Médico Orientado por Problemas (RMOP)**, proposto por Lawrence Weed em 1968. Em vez de organizar o prontuário em torno de episódios ou sistemas do corpo, Weed propôs organizá-lo em torno de uma **lista de problemas** ativa e longitudinal — que pode incluir diagnósticos confirmados, sintomas sem diagnóstico definido, riscos, questões sociais e preocupações do próprio paciente. Cada problema é acompanhado ao longo do tempo, tem seu próprio plano e pode ser aberto ou fechado conforme evolui. Nesse modelo, a hipertensão, a perda do emprego e a dificuldade de adesão ao tratamento são todos problemas legítimos que merecem registro e atenção. O cuidado deixa de ser uma sequência de consultas isoladas e passa a ser uma narrativa contínua sobre uma pessoa.
+
+
+
+
+SOAP é um formato estruturado de registro clínico com quatro partes: **S**ubjetivo, **O**bjetivo, **A**valiação (ou Análise) e **P**lano. Ele nasceu como parte do **Prontuário Orientado por Problemas (POMR)**, proposto por **Lawrence L. Weed** no fim da década de 1960, em dois artigos clássicos no *New England Journal of Medicine* e em sua obra sobre prontuários e educação médica. A ideia central é organizar o cuidado em torno de **problemas** e acompanhar sua evolução de forma lógica e rastreável. [New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM196803142781105 "Medical Records That Guide and Teach"){target="_blank"} ou em [New England Journal of Medicine](https://sci-hub.se/10.1056/NEJM196803142781105 "Medical Records That Guide and Teach"){target="_blank"}.
+
+
+
+## **Como funciona o SOAP**
+
+## 
+
+-   **S – Subjetivo:** Sintomas, preocupações, expectativas, ideias sobre a doença, história do problema, contexto social/familiar, preferências). É o “texto” do paciente e de cuidadores. Aqui escrevemos **o que a pessoa relata**. 
+
+-   **O – Objetivo:** **dados observáveis e mensuráveis** colhidos pelo profissional: sinais vitais, exame físico, resultados de testes, escalas padronizadas. Em outras palavras, aqui anotamos **o que nós estamos vendo**.
+
+-   **A – Avaliação/Análise:** **síntese clínica** que integra S e O: diagnóstico(s) diferencial(is), hipótese principal, gravidade/risco, raciocínio (por que tal hipótese é mais provável), e lista de problemas numerada (biomédicos e psicossociais). A codificação pode usar CID-1 (doenças) e, em APS, preferencialmente ICPC-2 (motivo da consulta, processo/conduta e diagnóstico por episódio de cuidado). Aqui registramos **o que estamos pensando sobre o que está acontecendo com o paciente**.
+
+-   **P – Plano:** o que será feito para cada problema: exames, tratamentos, educação, acordos de autocuidado, intervenções na comunidade/família, encaminhamentos, **seguimento** (quando/como), e “planos B”. Aqui anotamos **o que nós decidimos fazer juntos**
+
+
+
+
+## Vamos olhar este caso abaixo
+
+Mulher
+
+FEMININO
+
+DN 2009-04-29 -\> 16 anos
+
+**Subjetivo** - MÃE REFERE CEFALEIA, FEBRE NÃO AFERIDA, TOSSE SECA E CORIZA NASAL. NÃO BSABE A QUANTOS DIAS APRESENTA SINTOMAS. FEZ USO APENAS DE ANALGESICO. NEGA COMORBIDADES. NEGA ALERGIA MEDICAMENTOSA
+
+**Objetivo** - BEG, CORADO, HIDRATADO, AAAAC: BRNF 2 T SEM SOPROAP MV+ BILAT SEM RAABDOME INOCENTEMMII: PULSOS PRESENTES SEM EDEMA
+
+**Avaliação** - null\
+**Plano** - Exames solicitados: TESTE RÁPIDO PARA DETECÇÃO DE SARS-COVID-2 - 0214010163
+
+## CID-10 x ICPC-2 na APS (e onde entram no SOAP)
+
+-   **CID-10 (CID-10-CM onde aplicável)**: classificação internacional de **doenças**; ótima para estatística, faturamento e vigilância, mas nem sempre captura **motivo de consulta** ou **processos de cuidado**. Ex.: **I10** = hipertensão essencial.
+
+-   **ICPC-2 (WONCA):** pensada para **Atenção Primária**, codifica **três dimensões** de cada episódio: **Motivo do Encontro**, **Processo/Intervenção**, **Diagnóstico/Problema**. Ex.: **K86** = “Hipertensão não complicada”; **K85** = “PA elevada”; **K87** = “Hipertensão complicada”. Isso permite registrar a **trajetória** do cuidado ao longo do tempo, não só o rótulo da doença.
+
+## SOAP e os **atributos da APS**
+
+-   **Abrangência** (comprehensiveness): o S organiza a **narrativa de vida** e o O traz medidas e achados; a A integra dimensões **biomédicas e psicossociais** em **lista de problemas**; o P inclui ações **clínicas, educativas e comunitárias** — cobrindo o escopo ampliado da APS.
+
+-   **Coordenação do cuidado:** o formato orientado por problemas e a clareza do **Plano** (incluindo encaminhamentos, devolutivas e quem faz o quê) facilitam a **articulação** com outros pontos da rede e o retorno de informações.
+
+-   **Longitudinalidade:** cada visita acrescenta um **novo SOAP** que se conecta ao anterior, permitindo seguir **episódios** e **problemas** ao longo do tempo (especialmente com ICPC-2), com metas e revisões de plano registradas.
+
+-   **Acesso (primeiro contato):** anotações claras e padronizadas reduzem **repetição de histórias** e agilizam triagem/condutas, impactando a experiência de acesso (tempo e resolutividade).
+
+## Exemplos:
+
+### Primeira versão
+
+### 
+
+-   **S:** “Nega queixas importantes. Refere ‘meio tonto’.
+
+-   **O:** BEG, PA ok, MVUA, abd sem alt.
+
+-   **A:** Tontura.
+
+-   **P:** Solicito exames. Retorno se piorar.”
+
+### Segunda versão
+
+-   **S:** “Sr. João, 58a, veio por **tontura ao levantar** há 2 semanas; piora ao se erguer rápido; sem zumbido, sem perda auditiva, sem síncope. Relata **PA alta** no último mês; usa losartana eventualmente.
+
+-   **O:** PA 162/96 (sentado) e 154/94 (em pé 1’), FC 84, glicemia capilar 106 mg/dL; **manobra de Dix-Hallpike negativa**; ausculta c/ BNF.
+
+-   **A:** 1) **Hipertensão arterial não controlada** (ICPC-2 **K86**; CID-10 **I10**); 2) **Tontura postural** – provável **hipotensão ortostática leve** induzida por descondicionamento/baixa ingesta.
+
+-   **P:** Ajustar anti-hipertensivo; educação sobre levantar devagar e hidratação; **MAPA/ambulatório** em 2 semanas; metas: **PA \<130/80** se tolerado; revisar adesão; considerar avaliação de risco CV global.”
+
+### Terceira versão
+
+**Subjetivo:** “Dona Maria, 63 anos. Viúva há 8 meses (seu marido teve um AVC). Está preocupada com o cansaço que vem sentindo recentemente e com os valores da pressão que estão muito altos. Tem medo de ter um derrame como o marido teve. Continua usando apenas hidroclorotiazida 25 mg ao dia, mas com valores de PA acima ede 150/100 mmHg recentemente. Diz que tem medo de ter um derrame como seu esposo e que aceita trocar de remédio, se for precisso - "menos aquele que me deu uma tosse danada"; Ainda fuma cinco cigarros ao dia e está contemplativa para tentar parar novamente- já parou anos atrás, mas acabou voltando. Sabe do prejuizo que o cigarro faz para a HAS, mas ainda acha que "eu fumo muito pouco, doutor".
+
+**Objetivo:** PA 168/100 (sentado), IMC 31, circ. cintura 103 cm; ausculta cardíaca e pulmonar normais, sem sopros. Último PAP no início do ano, normal. Mamografia idem.
+
+**Avaliação (lista de problemas):**
+
+1.  **Hipertensão, controle inadequado** (ICPC-2 **K86**; CID-10 **I10**), adesão baixa por **efeitos adversos** prévios e **baixa literacia**;
+
+2.  **Risco cardiovascular global elevado** (obesidade central, tabagismo, sedentarismo, luto/estresse);
+
+3.  **Vulnerabilidade social** (insegurança alimentar, cuidadora familiar);
+
+4.  **Luto recente** com sintomas subclínicos de humor;
+
+5.  **Dificuldade de engajamento em mudança de hábitos de vida**;
+
+6.  **Tabagismo - contemplativa para mudança.**
+
+**Plano (por problema):**
+
+1.  Trocar IECA → **losartana 50 mg/d**; aferição domiciliar 5x/semana; **educação** com linguagem simples + impresso ilustrado; próxima revisão em **4 semanas**.
+
+2.  **Plano de risco CV**: metas PA \<130/80 se tolerado; **orientação alimentar** e encaminho para **benefício/alimento** na assistência social; solicitar **perfil lipídico** e **HbA1c**.
+
+3.  **Coordenação**: contato com **NASF/CRAS** para apoio social; incluir na **agenda compartilhada** de cuidado.
+
+4.  **Saúde mental**: técnicas breves de manejo do luto; oferta de **grupo na UBS**; escala GDS na próxima consulta.
+
+5.  **Atividade física**: caminhada 5×/sem 20–30 min (começar com 10 min) + meta semanal registrada.
+
+6.  **Tabagismo**: aconselhamento breve; avaliar prontidão; oferecer grupos e **NRT** se elegível.\
+    **Seguimento**: retorno em 4 semanas; telefonema da equipe em 7–10 dias para reforço; revisar adesão e PA.”
+
+*Destaques:* narrativa do paciente, contexto familiar/social, prioridades compartilhadas, **coordenação** com rede social/saúde, e metas **longitudinais**. Códigos ajudam a mensurar e integrar informação clínica e de gestão.
+
+## Dicas rápidas para escrever melhor no SOAP
+
+-   
+
+-   **Evite maneirismos** (“BEG”, “sem alt.”) e **escreva o que realmente observou/decidiu**.
+
+-   **Liste problemas** numerados (inclua psicossociais e determinantes sociais).
+
+-   **Explique seu raciocínio** na A (“porque A é mais provável que B”).
+
+-   **No Plano, atribua responsabilidades** (quem faz o quê) e **datas** de seguimento.
+
+-   **Use ICPC-2** para motivo/processo/diagnóstico na APS e **CID-10** quando precisar de estatística, interoperabilidade e faturamento.
+
+## Referências essenciais
+
+
+Neste vídeo há uma aula bem detalhada sobre o tema - [**SBMFCensina 2025 - Registro Clínico e SOAP**](https://www.youtube.com/watch?v=7_ngYffR_mM){target="_blank"}
+
+
+
+
