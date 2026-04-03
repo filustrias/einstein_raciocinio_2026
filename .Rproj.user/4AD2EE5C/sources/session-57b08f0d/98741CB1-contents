@@ -113,12 +113,15 @@ A produção científica em saúde cresce continuamente, gerando um volume de in
 
 A (MBE), ou Evidence-Based Medicine (EBM), surgiu como uma proposta transformadora no final dos anos 1980, consolidando-se nos anos 1990. A ideia pioneira foi gestada por um grupo de professores e pesquisadores da McMaster University, no Canadá, liderados por nomes como David Sackett, Gordon Guyatt, Brian Haynes e outros. Esses profissionais estavam profundamente incomodados com um problema recorrente: o conhecimento gerado por pesquisas clínicas de alta qualidade demorava a chegar à prática médica cotidiana, ou simplesmente não chegava.
 
+
 ![David Sackett](images/david_sackett.jpg)
 
 ![Brian Haynes](images/brian_haynes.jpg)
 
 ![Gordon Guyatt](images/gordon_guyatt.jpg)
-=======
+
+
+
 Infelizmente existe uma grande lacuna entre o que sabemos a partir da pesquisa científicas e o que fazemos na prática clínica.
 Devido à grande quantidade de pesquisas publicadas – algumas válidas e outras nem tanto – os clínicos compreensivelmente desconhecem grande parte delas ou não possuem as ferramentas necessárias para avaliá-las quanto à qualidade, relevância e magnitude do seu efeito.
 Além disso, muitos pesquisadores têm dificuldade em traduzir os resultados obtidas em seus estudos de forma palatável para que clínicos consigo entender melhor como estes resultados podem ser traduzidos para a prática clínica.
@@ -127,23 +130,14 @@ Já em 1972 o epidemiologista britânico Archie Cochrane chamava a atenção par
 Infelizmente, evidências robustas feitas através de revisões sistemáticas da literatura dificilmente se traduziam diretamente em condutas práticas.
 
 A produção científica em saúde cresce continuamente, gerando um volume de informações tão grande que se torna impraticável para qualquer médico (principalmente médicos de família) acompanhar tudo o que é publicado.
-Como já visto na semana passada, todos nós temos diversas dúvidas ao longo de um dia de atendimento.
-Registrar e escrever estas dúvidas na forma de uma pergunta SMART é raro.
+
+Todos nós temos diversas dúvidas ao longo de um dia de atendimento. Registrar e escrever estas dúvidas na forma de uma pergunta SMART é raro.
+
 Buscar informações relevantes para responder a esta pergunta, mais raro ainda.
+
 Além da dificuldade em transformar a inquietação em uma pergunta de estudo objetiva, o tempo necessário para encontrar respostas para as diversas dúvidas que se apresentam diariamente é um dos fatores determinantes para não sistematizarmos nosso estudo e nossa busca por evidências.
 Isto torna a prática baseada em evidências muito mais um ideal do que uma prática cotidiana para muitos médicos.
 
-## Como surgiram os 5 As da Medicina Baseada em Evidências (MBE)
-
-A (MBE), ou Evidence-Based Medicine (EBM), surgiu como uma proposta transformadora no final dos anos 1980, consolidando-se nos anos 1990.
-A ideia pioneira foi gestada por um grupo de professores e pesquisadores da McMaster University, no Canadá, liderados por nomes como David Sackett, Gordon Guyatt, Brian Haynes e outros.
-Esses profissionais estavam profundamente incomodados com um problema recorrente: o conhecimento gerado por pesquisas clínicas de alta qualidade demorava a chegar à prática médica cotidiana, ou simplesmente não chegava.
-
-![David Sackett](david_sackett.jpg)
-
-![Brian Haynes](brian_haynes.jpg)
-
-![Gordon Guyatt](gordon_guyatt.jpg)
 
 O que se observava era uma lacuna entre a produção do conhecimento científico sobre eficácia de intervenções terapêuticas ou do poder de teste diagnósticos e a prática médica que se realizava junto aos pacientes, ou seja, o que os médicos recomendavam aos seus pacientes era amparado não por evidências científicas.
 
@@ -159,12 +153,6 @@ Este conjunto pragmático de ações não é algo trivial: exigem compreensão e
 
 ![Capa do livro "Evidence-Based Medicine: How to Practice and Teach EBM”, hoje na sua quinta edição. Foi publicado pela primeira vez em 1997 e escrito por David L. Sackett, W.Scott Richardson, W. Rosenberg, e R.Brian Haynes.](images/ebm_book.jpg)
 
-
 Na [Estante Virtual](https://www.estantevirtual.com.br/livro/evidencebased-medicine-how-to-practice-and-teach-ebm-KIV-8860-000?campaign=ev&gad_source=4&gad_campaignid=23223492660&gbraid=0AAAAADteek15p27lRCPyGS7ip-tbKrSJh&gclid=Cj0KCQjwp7jOBhDGARIsABe7C4eixlz3ycUaUQurHRVFJT4TDn2m-QH_NUCWYtfZJPeSS2X6yTAL5IcaAhFiEALw_wcB){target="\"_blank"} está disponível.
-=======
-Este conjunto pragmático de ações não é algo trivial: exigem compreensão e prática de conceitos complexos como medidas de frequência de um evento (incidência e prevalência), risco relativo, odds ratio, risco absoluto, redução absoluta do risco, número necessário para tratar (number needed to treat – NNT), número necessário para causar dano (Number needed to harm – NNH), intervalos de confiança, viés de seleção, validade interna e externa, entre outros.
-Parte do desafio da MBE foi justamente criar um caminho pedagógico acessível que permitisse a profissionais de diferentes níveis de formação se apropriar desses instrumentos.
-
-![Capa do livro "Evidence-Based Medicine: How to Practice and Teach EBM”, hoje na sua quinta edição. Foi publicado pela primeira vez em 1997 e escrito por David L. Sackett, W.Scott Richardson, W. Rosenberg, e R.Brian Haynes.](ebm_book.jpg)
 
 O termo "Evidence-Based Medicine" foi utilizado pela primeira vez por Gordon Guyatt em 1991, e a definição clássica de David Sackett, publicada no editorial [Evidence based medicine: what it is and what it isn't](https://www.bmj.com/content/312/7023/71){target="\"_blank"} no British Medical Journal (BMJ) em 1996, a descreve **como o uso consciente, explícito e criterioso da melhor evidência atual na tomada de decisões sobre o cuidado de pacientes individuais**.
