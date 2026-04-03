@@ -3,7 +3,7 @@
     "path": "C:/Users/adels/OneDrive/Desktop/Raciocíno clínico/intro.qmd",
     "project_path": "intro.qmd",
     "type": "quarto_markdown",
-    "hash": "499711672",
+    "hash": "1141312010",
     "contents": "",
     "dirty": false,
     "created": 1760649312827.0,
@@ -17,15 +17,15 @@
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "6962:3221.666748046875",
-        "cursorPosition": "24,643",
-        "scrollLine": "32"
+        "cursorPosition": "40,61",
+        "scrollLine": "40"
     },
     "folds": "",
-    "lastKnownWriteTime": 1775167620,
+    "lastKnownWriteTime": 1775182003,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1775167620670,
+    "last_content_update": 1775182003075,
     "read_only": false,
     "read_only_alternatives": []
 }

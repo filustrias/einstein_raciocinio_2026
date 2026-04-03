@@ -2,7 +2,6 @@
 
 
 
-
 ## Modelos de Registro Clínico: do Tradicional ao Orientado por Problemas
 
 O registro clínico que aprendemos na propedêutica médica segue uma estrutura consagrada pelo tempo: 
@@ -40,6 +39,9 @@ SOAP é um formato estruturado de registro clínico com quatro partes: **S**ubje
 -   **S – Subjetivo:** Sintomas, preocupações, expectativas, ideias sobre a doença, história do problema, contexto social/familiar, preferências). É o “texto” do paciente e de cuidadores. Aqui escrevemos **o que a pessoa relata**. 
 
 -   **O – Objetivo:** **dados observáveis e mensuráveis** colhidos pelo profissional: sinais vitais, exame físico, resultados de testes, escalas padronizadas. Em outras palavras, aqui anotamos **o que nós estamos vendo**.
+=======
+-   **O – Objetivo:** **dados observáveis/medíveis** colhidos pelo profissional: sinais vitais, exame físico, resultados de testes, escalas padronizadas. Em outras palavras, aqui anotamos **o que nós estamos vendo**.
+
 
 -   **A – Avaliação/Análise:** **síntese clínica** que integra S e O: diagnóstico(s) diferencial(is), hipótese principal, gravidade/risco, raciocínio (por que tal hipótese é mais provável), e lista de problemas numerada (biomédicos e psicossociais). A codificação pode usar CID-1 (doenças) e, em APS, preferencialmente ICPC-2 (motivo da consulta, processo/conduta e diagnóstico por episódio de cuidado). Aqui registramos **o que estamos pensando sobre o que está acontecendo com o paciente**.
 
