@@ -12,6 +12,8 @@ book:
     - summary.qmd
     - 5As.qmd
     - references.qmd
+    - smart_pico_5as_hiv_amamentacao.qmd
+    - efeito_terapeutico_NNT.qmd
 
 bibliography: references.bib
 

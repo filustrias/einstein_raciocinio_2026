@@ -1,0 +1,112 @@
+# Efeito Terapêutico e NNT {.unnumbered}
+
+## Resultados e desfechos: uma distinção que importa
+
+Antes de entrar nos números, vale fixar uma distinção que parece pequena, mas muda bastante a forma como avaliamos o que fazemos na clínica.
+
+**Resultados** são o que o serviço produz: número de consultas realizadas, exames solicitados, vacinas aplicadas, prescrições emitidas. São importantes para gestão e para garantir acesso — mas não dizem nada sobre o que aconteceu com o paciente.
+
+**Desfechos** são mudanças observáveis no estado de saúde do paciente que decorrem — ou não — do que fizemos. Morreu ou sobreviveu? Desenvolveu complicações? Ficou internado? Teve menos dor? É o desfecho que dá sentido ao resultado. Podemos ter feito cem consultas impecáveis do ponto de vista administrativo e, ainda assim, não ter mudado nenhum desfecho — porque não falamos sobre o remédio certo, não prescrevemos o que era indicado, não orientamos no momento certo.
+
+Os desfechos ainda se dividem em dois grupos. Os **desfechos intermediários** — também chamados de substitutos — são marcadores biológicos ou clínicos que esperamos que se correlacionem com o que realmente importa: pressão arterial, hemoglobina glicada, colesterol LDL. Nenhum deles é o problema em si — são sinais de que algo ruim pode estar por vir. Já os **desfechos finais** são os eventos que realmente importam: morte, infarto, AVC, internação hospitalar, qualidade de vida. A medicina baseada em evidências nos pede sempre que perguntemos: este tratamento muda apenas o marcador, ou muda também o que acontece com o paciente? A distinção importa porque já houve casos em que medicamentos melhoraram desfechos intermediários e pioraram desfechos finais — o marcador melhorou, mas o paciente morreu mais.
+
+---
+
+## O que é efeito terapêutico?
+
+Um tratamento funciona quando **muda a probabilidade de um desfecho** em relação ao que aconteceria sem ele. Essa diferença é o efeito terapêutico. Nem todo tratamento que "faz algo" tem efeito clinicamente relevante. Precisamos quantificar.
+
+---
+
+## Tipos de desfechos que um tratamento pode mudar
+
+| Tipo de desfecho | Exemplo |
+|---|---|
+| **Evitar morte** | Reduzir mortalidade cardiovascular |
+| **Evitar internação** | Prevenir hospitalização por IC descompensada |
+| **Evitar evento grave** | Prevenir AVC em fibrilação atrial |
+| **Diminuir dor** | Analgesia em osteoartrite |
+| **Melhorar função** | Capacidade de caminhar em DPOC |
+| **Melhorar qualidade de vida** | Menos limitações nas atividades do dia a dia |
+
+> Desfechos "duros" — morte, internação — têm peso clínico maior do que desfechos substitutos, como a melhora de um exame laboratorial. Um tratamento que reduz o colesterol mas não reduz mortalidade resolve o marcador, não o problema.
+
+---
+
+## Risco absoluto (RA)
+
+É a probabilidade bruta de um evento ocorrer num grupo.
+
+$$RA = \frac{\text{número de eventos}}{\text{total de pessoas no grupo}}$$
+
+**Exemplo:**
+- Sem tratamento: 30 mortes em 100 pessoas → RA = **30%**
+- Com tratamento: 25 mortes em 100 pessoas → RA = **25%**
+
+---
+
+## Redução absoluta do risco (RAR)
+
+$$RAR = RA_{controle} - RA_{tratamento} = 30\% - 25\% = \mathbf{5\%}$$
+
+Para cada 100 pessoas tratadas, **5 mortes são evitadas**.
+
+---
+
+## Risco relativo (RR) e Redução relativa do risco (RRR)
+
+$$RR = \frac{RA_{tratamento}}{RA_{controle}} = \frac{25\%}{30\%} = \mathbf{0{,}83}$$
+
+Quem recebe o tratamento tem 83% do risco de morrer em relação a quem não recebe.
+
+$$RRR = 1 - RR = 1 - 0{,}83 = \mathbf{17\%}$$
+
+> ⚠️ **Cuidado com o RRR**: parece impressionante, mas depende inteiramente do risco basal. Uma RRR de 17% aplicada a uma população com 30% de risco basal evita mortes reais. A mesma RRR aplicada a uma população com 1% de risco basal evita pouquíssima coisa. O número relativo não muda — o impacto real, sim.
+
+---
+
+## NNT — Número Necessário para Tratar
+
+$$NNT = \frac{1}{RAR} = \frac{1}{0{,}05} = \mathbf{20}$$
+
+**Trato 20 pessoas para que 1 morte a mais seja evitada.**
+
+Mas o que acontece com as outras 19? É aqui que o NNT começa a contar uma história mais honesta do que o risco relativo.
+
+De 100 pessoas tratadas neste exemplo:
+- **5** se beneficiaram — evitaram a morte graças ao tratamento
+- **25** morreram apesar do tratamento
+- **70** nunca morreriam de qualquer forma — tomaram o tratamento sem benefício individual
+
+Ou seja: a maioria das pessoas que tratamos recebe o tratamento sem ganho direto. Elas aceitam o custo — financeiro, de efeitos colaterais, de inconveniência — em nome de um benefício que é estatisticamente compartilhado entre muitas e vivenciado individualmente por poucas. Isso não significa que o tratamento seja ruim. Para desfechos graves como morte, um NNT de 20 é clinicamente expressivo. Mas significa que precisamos ser honestos sobre o que estamos oferecendo.
+
+### O NNT depende do risco basal — sempre
+
+Um mesmo tratamento com o mesmo risco relativo terá NNTs completamente diferentes dependendo de quem estamos tratando. Considere uma RRR fixa de 17%:
+
+| Risco basal (sem tratamento) | RAR | NNT |
+|---|---|---|
+| 30% | 5,1% | ~20 |
+| 10% | 1,7% | ~59 |
+| 1% | 0,17% | ~588 |
+
+O mesmo medicamento. O mesmo risco relativo. NNTs radicalmente diferentes. É por isso que tratar populações de alto risco costuma ser muito mais eficiente do que tratar populações de baixo risco com a mesma intervenção — e é por isso que o risco relativo isolado não basta para a decisão clínica.
+
+### Como traduzir o NNT para a consulta
+
+Quando dizemos a um paciente que "este remédio reduz em 17% o risco de morrer", estamos usando a RRR — que soa grande. Quando dizemos "você precisaria tomar este remédio por cinco anos para que uma entre vinte pessoas como você evitasse uma morte", estamos usando o NNT — que ancora o benefício na realidade. Ambas descrevem o mesmo dado. A diferença é que a RRR tende a inflar a percepção de benefício, enquanto o NNT a coloca em perspectiva. Um NNT alto não inviabiliza o tratamento — mas muda a conversa.
+
+> NNTs abaixo de 20 para desfechos graves costumam ser considerados clinicamente relevantes. NNTs acima de 100 para os mesmos desfechos merecem questionamento.
+
+---
+
+## Resumo
+
+| Medida | Fórmula | Valor no exemplo |
+|---|---|---|
+| RA sem tratamento | eventos / total | 30% |
+| RA com tratamento | eventos / total | 25% |
+| RAR | RA controle − RA tratamento | 5% |
+| RR | RA tratamento / RA controle | 0,83 |
+| RRR | 1 − RR | 17% |
+| **NNT** | **1 / RAR** | **20** |

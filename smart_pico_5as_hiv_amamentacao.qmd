@@ -1,0 +1,179 @@
+# Da Pergunta Genérica à Estratégia PICO: Amamentação e HIV {.unnumbered}
+
+---
+
+## 1. A Pergunta Genérica
+
+> *Por que incentivam mulheres africanas com HIV a amamentar exclusivamente no peito? A recomendação não é outra?*
+
+A intuição é razoável: HIV é transmitido pelo leite materno — então por que não substituir completamente?  
+Talvez a resposta esteja no contexto. Em cenários de alta vulnerabilidade, o risco de mortalidade infantil por doenças diarreicas, desnutrição e infecções respiratórias, talvez o benefício do aleitamento superre o risco de transmissão do HIV por aleitamento materno exclusivo — especialmente quando a mãe está em terapia antirretroviral (TARV).  
+
+
+A OMS recomenda amamentação exclusiva até 6 meses **com TARV materna** em contextos de baixa renda. Esta estratégia se chama Option B+ - https://pmc.ncbi.nlm.nih.gov/articles/PMC9328372/ . 
+
+---
+
+## 2. Refinando: Pergunta SMART
+
+| Critério | Elemento |
+|----------|----------|
+| **S**pecific | Em lactentes nascidos de mães com HIV em uso de TARV em contextos africanos de baixa renda |
+| **M**easurable | Qual a taxa de sobrevida livre de HIV aos 18 meses |
+| **A**chievable | Comparando amamentação exclusiva versus substituição exclusiva por fórmula versus alimentação mista |
+| **R**elevant | Para orientar políticas de alimentação infantil em países de renda baixa e média |
+| **T**ime-bound | Nos primeiros 18 meses de vida |
+
+**Pergunta SMART:**
+> Em lactentes de 0–18 meses nascidos de mães com HIV em TARV em países africanos de baixa renda, qual estratégia de alimentação — amamentação exclusiva, substituição por fórmula ou alimentação mista — está associada à maior sobrevida livre de HIV aos 18 meses?
+
+---
+
+## 3. Pergunta PICO
+
+| Elemento | Definição |
+|----------|-----------|
+| **P** | Lactentes nascidos de mães com HIV em uso de TARV em contextos africanos de baixa renda, sem infecção pelo HIV às 6 semanas de vida |
+| **I** | Amamentação exclusiva |
+| **C** | Substituição exclusiva por fórmula / alimentação mista |
+| **O** | Sobrevida livre de HIV aos 3 e 18 meses |
+
+---
+
+## 4. Os 5As da MBE
+
+### Ask
+> Em lactentes expostos ao HIV com mães em TARV, a amamentação exclusiva oferece sobrevida livre de HIV equivalente ou superior à substituição por fórmula?
+
+### Acquire
+Coorte retrospectiva (BMC Infect Dis 2015), n = 801 lactentes na Nigéria; 93,8% das mães em TARV.
+
+### Appraise
+- Delineamento: coorte retrospectiva — risco de confundimento por indicação (escolha materna, não randomização)
+- Alocação por escolha materna → viés de seleção relevante
+- Força da evidência: **DynaMed Level 2** (moderada)
+- Limitação principal: sem controle de variáveis socioeconômicas que influenciam tanto a escolha de alimentação quanto a mortalidade
+
+### Apply
+
+#### Sobrevida livre de HIV — 3 meses
+
+| Grupo | Sobrevida (%) | Risco de não-sobrevida (%) |
+|-------|:---:|:---:|
+| Amamentação exclusiva | 97,4 | 2,6 |
+| Fórmula exclusiva | 99,1 | 0,9 |
+| Alimentação mista | 75,7 | 24,3 |
+
+#### Sobrevida livre de HIV — 18 meses
+
+| Grupo | Sobrevida (%) | Risco de não-sobrevida (%) |
+|-------|:---:|:---:|
+| Amamentação exclusiva | 92,5 | 7,5 |
+| Fórmula exclusiva | 86,2 | 13,8 |
+| Alimentação mista | 69,8 | 30,2 |
+
+#### Análise de Risco Absoluto e NNT (desfecho: não-sobrevida livre de HIV aos 18 meses)
+
+**Amamentação exclusiva vs. Fórmula exclusiva**
+
+| Métrica | Valor |
+|---------|-------|
+| Risco no grupo fórmula (RAC) | 13,8% |
+| Risco no grupo amamentação exclusiva (RAI) | 7,5% |
+| Redução Absoluta do Risco (RAR) | **6,3%** |
+| NNT | **~16** |
+
+> Interpretar com cautela: amamentação exclusiva associada a **menor** não-sobrevida que fórmula aos 18 meses — provavelmente porque mortes por outras causas (diarreia, desnutrição) são capturadas no desfecho composto "sobrevida livre de HIV".
+
+**Alimentação mista vs. Amamentação exclusiva** (grupo de risco a evitar)
+
+| Métrica | Valor |
+|---------|-------|
+| Risco alimentação mista | 30,2% |
+| Risco amamentação exclusiva | 7,5% |
+| RAR | **22,7%** |
+| NNT (para evitar 1 desfecho) | **~4** |
+
+### Announce
+A amamentação **exclusiva** com mãe em TARV está associada a melhor sobrevida livre de HIV aos 18 meses do que a substituição por fórmula em contextos africanos de baixa renda. A alimentação **mista** é o pior cenário em qualquer momento. A recomendação da OMS de amamentação exclusiva com TARV materna é consistente com esses dados.
+
+---
+
+---
+
+# Segunda Questão: Nevirapina Profilática no Lactente
+
+---
+
+## 1. Pergunta SMART
+
+> Em lactentes amamentados de mães com HIV, a nevirapina profilática estendida (até 6 meses) comparada a 6 semanas reduz a transmissão pós-natal do HIV aos 6 meses?
+
+---
+
+## 2. Pergunta PICO
+
+| Elemento | Definição |
+|----------|-----------|
+| **P** | Lactentes amamentados sem HIV ao nascer, filhos de mães com HIV (com e sem TARV), em países africanos |
+| **I** | Nevirapina diária estendida até 6 meses de vida |
+| **C** | Nevirapina por apenas 6 semanas (+ placebo de 6 semanas a 6 meses) |
+| **O** | Taxa de infecção pelo HIV aos 6 e 18 meses |
+
+---
+
+## 3. Os 5As da MBE
+
+### Ask
+A extensão da profilaxia com nevirapina para 6 meses reduz a transmissão do HIV pelo aleitamento materno comparada ao esquema padrão de 6 semanas?
+
+### Acquire
+Ensaio clínico randomizado — HPTN 046 (Lancet 2012), n = 1.527 lactentes, África do Sul, Tanzânia, Uganda e Zimbábue.  
+30% das mães recebiam TARV no momento da randomização. >95% em amamentação exclusiva aos 3 meses.
+
+### Appraise
+- Delineamento: ECR — maior força de evidência
+- Sem mascaramento (sem cegamento explícito)
+- Análise de subgrupo pré-especificada por status de TARV materna
+- Seguimento até 18 meses com análise de subgrupo publicada separadamente (JAIDS 2014)
+- **DynaMed Level 2** (dado o não-cegamento)
+
+### Apply
+
+#### Taxa de infecção por HIV aos 6 meses
+
+| Grupo | Nevirapina estendida | Placebo | p |
+|-------|:---:|:---:|:---:|
+| **Geral** | 1,1% | 2,4% | 0,049 |
+| Mães **sem** TARV | 1,3% | 3,4% | 0,027 |
+| Mães **com** TARV | 0,5% | 0,0% | NS |
+
+#### Risco Absoluto e NNT
+
+| Subgrupo | RAI | RAC | RAR | NNT |
+|----------|:---:|:---:|:---:|:---:|
+| Geral | 1,1% | 2,4% | 1,3% | **77** |
+| Mães sem TARV | 1,3% | 3,4% | 2,1% | **48** |
+| Mães sem TARV, CD4 ≥350 | 0,7% | 2,8% | 2,1% | **50** |
+| Mães sem TARV, CD4 <350 | 4,8% | 8,1% | 3,3% | NS |
+| Mães com TARV | 0,5% | 0,0% | — | NS (sem benefício) |
+
+> RAI = risco no grupo intervenção (nevirapina estendida); RAC = risco no grupo controle (placebo)
+
+#### Aos 18 meses
+Sem diferença significativa entre os grupos — o efeito protetor adicional da nevirapina estendida **não se sustenta** em longo prazo.
+
+### Announce
+A nevirapina estendida até 6 meses **reduz a transmissão aos 6 meses** principalmente em lactentes de mães **sem TARV** com CD4 ≥350 (NNT 50). Quando a mãe está em TARV com supressão viral, o benefício adicional da nevirapina **não é significativo** — o que reforça que a TARV materna é a intervenção central. O efeito não se mantém aos 18 meses.
+
+---
+
+## Síntese Clínica
+
+```
+Melhor estratégia para o lactente exposto ao HIV em contexto africano:
+
+1. TARV materna eficaz (supressão viral) → intervenção mais importante
+2. Amamentação EXCLUSIVA (nunca mista) até 6 meses
+3. Nevirapina profilática estendida → benefício adicional apenas se mãe SEM TARV e CD4 ≥350
+```

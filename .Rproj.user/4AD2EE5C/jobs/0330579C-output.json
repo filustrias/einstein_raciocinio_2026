@@ -9,3 +9,4 @@
 [1,"Watching files for changes\nBrowse at http://localhost:4661/\nListening on http://127.0.0.1:4661/\n"]
 [1,"GET: /\n"]
 [1,"GET: /summary.html\n"]
+[1,"  /.well-known/appspecific/com.chrome.devtools.json (404: Not Found)\n"]
